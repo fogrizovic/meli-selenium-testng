@@ -22,5 +22,6 @@ foo@bar:~$ mvn test
 ```
 
 ### Reports
+
 Find test cases results under root folder, index.html file.
 

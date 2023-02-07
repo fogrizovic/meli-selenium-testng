@@ -17,6 +17,7 @@
         <webdrivermanager.version>5.3.2</webdrivermanager.version>
         <lombok.version>1.18.24</lombok.version>
         <extentreports.version>5.0.9</extentreports.version>
+        <poi.version>5.2.3</poi.version>
     </properties>
 
     <dependencies>
@@ -49,6 +50,18 @@
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>${extentreports.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi.version}</version>
         </dependency>
 
     </dependencies>

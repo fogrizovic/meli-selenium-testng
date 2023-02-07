@@ -1,24 +1,17 @@
 package com.meli.qa.pages;
 
-import com.meli.qa.base.TestBase;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import org.openqa.selenium.By;
 
-public class InmueblesPage extends TestBase {
+import static com.meli.qa.utils.SeleniumUtils.isDisplayed;
+
+public class InmueblesPage {
 
     // Elements
-    @FindBy(xpath = "//h3[contains(text(),\"Publicar\")]")
-    WebElement publicarLink;
-
-    public InmueblesPage() {
-        PageFactory.initElements(driver, this);
-    }
+    private static final By PUBLICAR_LNK = By.xpath("//h3[contains(text(),\"Publicar\")]");
 
     // Actions
-    public InmueblesPage verifyPublicarLinkIsPresent() {
-        Assert.assertTrue(publicarLink.isDisplayed());
-        return this;
+    public Boolean isPublicarDisplayed() {
+        return isDisplayed(PUBLICAR_LNK);
     }
+
 }

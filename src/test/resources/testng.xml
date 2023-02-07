@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All tests">
+    <listeners>
+        <listener class-name="com.meli.qa.listeners.TestListener"></listener>
+    </listeners>
+    <test parallel="classes" thread-count="2" name="HomePage">
+        <classes>
+            <class name="com.meli.qa.tests.HomePageTest"/>
+            <class name="com.meli.qa.tests.SearchTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,9 +1,9 @@
 package com.meli.qa.tests;
 
-import com.meli.qa.base.TestBase;
+import com.meli.qa.annotations.FrameworkAnnotation;
 import com.meli.qa.pages.HomePage;
 import com.meli.qa.pages.InmueblesPage;
-import org.testng.annotations.AfterMethod;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -14,22 +14,16 @@ public class HomePageTest extends TestBase {
 
     @BeforeMethod
     public void setup() {
-        init();
         homePage = new HomePage();
-        inmueblesPage = new InmueblesPage();
     }
 
-    @Test
-    public void shouldOpenInmueblesPageFromMenu() {
+    @FrameworkAnnotation(author = "fogrizovic")
+    @Test(description = "Should open Inmuebles page from Home page menu")
+    public void shouldOpenInmueblsesPageFromMenu() {
         inmueblesPage = homePage.header()
                 .selectCategory("Inmuebles");
 
-        inmueblesPage
-                .verifyPublicarLinkIsPresent();
+        Assert.assertTrue(inmueblesPage.isPublicarDisplayed());
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 }

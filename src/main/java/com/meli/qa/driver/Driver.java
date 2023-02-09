@@ -15,7 +15,10 @@ public final class Driver {
 
     public static void initDriver() {
         if (getDriver() == null) {
-            WebDriver driver = DriverFactory.getDriver(PropReader.getProperty("browser"));
+            String browser = PropReader.getProperty("browser");
+            String runMode = PropReader.getProperty("runmode");
+
+            WebDriver driver = DriverFactory.getDriver(runMode, browser);
             setDriver(driver);
             getDriver().manage().window().maximize();
             getDriver().manage().deleteAllCookies();
